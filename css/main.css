@@ -131,22 +131,23 @@ body {
           &:last-child{padding-right: 0;}
         }
         >ul {
+          border-radius: 10px;
           display: none;
+          color: #fff;
           position: absolute;
           text-align: center;
-          width: 190px;
-          background: #fff;
-          bottom: -180px; left: 50%;
-          transform: translateX(-50%);
-          border: 1px solid #eee;
+          width: 150px;
+          background: url(../images/pt.png) no-repeat center center,linear-gradient(#006F4A,#006F4A);
+          bottom: -180px; right: -55px;
+          border: 1px solid #fff;
           box-shadow: 5px 5px 30px 0 rgba(0,0,0,.1);
           font-size: 15px;
+          text-transform: uppercase;
           li {
             padding: 10px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(255,255,255,.5);
             &:hover {
-              color: #006F4A;
-              text-decoration: underline;
+              background: #00000037;
             }
             a {
               display: block;
@@ -173,15 +174,18 @@ body {
     .container {
       position: relative;
       height: 100%;
+      .mobile {
+        display: none;
+      }
       .drink {
         position: absolute;
         top: 50%; right: 0;
         transform: translateY(-50%);
-        width: 950px;
+        width: 75%;
       }
       .bannerMainTitle {
         position: absolute;
-        top: 30%; left: 0;
+        top: 30%; left: 5%;
         transform: translateY(-50%);
         color: #006F4A;
         .mainTitle {
@@ -315,7 +319,7 @@ body {
 
   /* news */
   .news {
-    margin: 100px 0 350px 0;
+    margin: 100px 0 0 0;
     width: 100%;
     height: 460px;
     background: linear-gradient(rgb(0, 111, 74,.8), rgb(0, 111, 74,.8)), url(../images/new_bg_cafe.jpg) no-repeat center/cover;
@@ -335,7 +339,7 @@ body {
         width: 100%;
         z-index: 3;
         position: absolute;
-        bottom: -120px; left: 0;
+        bottom: -20%; left: 0;
         ul {
           display: flex;
           justify-content: space-between;
@@ -384,12 +388,16 @@ body {
           font-size: 15px;
         }
       }
+      .mobile {display: none;}
     }
   }
   
   /* rewards */
   .rewards {
-    margin-bottom: 200px;
+    padding-top: 300px;
+    padding-bottom: 220px;
+    background: url(../images/rewards_bg.png) no-repeat;
+    background-attachment: fixed;
     .container {
       .title {
         font-size: 30px;
@@ -400,10 +408,10 @@ body {
       .rewardGroup {
         display: grid;
         grid-template-columns: 2fr 3fr;
-        grid-template-rows: 290px 290px;
+        grid-template-rows: 290px 1fr;
         gap: 15px;
         .loginReward {
-          background: url(../images/rewards_cup.png) no-repeat 340px center,linear-gradient(#1E3932,#1E3932); 
+          background: url(../images/rewards_cup.png) no-repeat right center,linear-gradient(#1E3932,#1E3932); 
           border-radius: 15px 0 15px 15px;
           color:#fff;
           a {
@@ -446,6 +454,7 @@ body {
               float: left;
               background: url(../images/reward.jpg) no-repeat center/cover;
               width: 40%; height: 290px;
+              border-radius: 15px 0 0 15px;
             }
             .text {
               float: left;
@@ -471,12 +480,12 @@ body {
           }
         }
         .mobileCardReward {
-          background: url(../images/reward_card.png) no-repeat 900px center,linear-gradient(#CBE8E3,#CBE8E3); 
+          position: relative;
+          background:#CBE8E3; 
           grid-column-start: 1;
           grid-column-end: 3;
           box-sizing: border-box;
-          padding-top: 80px;
-          padding-left: 50px;
+          padding: 50px;
           border-radius: 15px;
           a {
             display: block;
@@ -484,6 +493,7 @@ body {
             .text {
               font-weight: 600;
               font-size: 22px;
+              padding-right: 300px;
             }
             .btn {
               display: inline-block;
@@ -491,6 +501,10 @@ body {
               padding: 5px 40px;
               border-radius: 5px;
               margin-top: 30px;
+            }
+            img {
+              width: 250px; right: 0; bottom: -50px;
+              position: absolute;
             }
           }
         }
@@ -510,7 +524,7 @@ body {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         article {
-          height: calc(3); 
+          height: calc(3);
           background: #F8F8F8;
         }
         .text {
@@ -743,26 +757,205 @@ body {
   .contentsWrap {
     .banner {
       margin-top: 87px;
-      background: url(../images/drink_bg_pt.png) no-repeat, linear-gradient(#FFF0DA,#FFF0DA);
-      height: 100vh;
-      text-align: center;
-      color: #fff;
+    }
+    .products {
+      padding: 15px;
+      margin: 130px 0;
+    }
+    .news {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgb(0, 111, 74,.8),rgb(0, 111, 74,.8)), url(../images/new_bg_cafe.jpg) no-repeat center/cover;
       background-attachment: fixed;
       .container {
         position: relative;
-        height: 100%;
+        .title {
+          display: none;
+        }
+        .newsItem {display: none;}
+        .mobile {
+          display: block;
+          .mobileTitle {
+            padding: 50px 0;
+            text-align: center;
+            color: #fff;
+            font-size: 35px;
+            font-weight: 500;
+          }
+          .mobileNewsItem {
+            ul {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 1fr 1fr;
+              
+              li {
+                a {
+                  display: block;
+                  img {
+                    display: block;
+                    width: 100%;
+                    height: 455px;
+                    object-fit: cover;
+                  }
+                  p {
+                    padding: 3vh 0;
+                    text-align: center;
+                    color: #fff;
+                    background: #006F4A;
+                    font-size: 22px;
+                    font-weight: 500;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .rewards {
+      padding-top: 150px;
+      padding-bottom: 180px;
+      background: url(../images/rewards_bg.png) no-repeat;
+      background-attachment: fixed;
+      .container {
+        padding: 15px;
+        .title {
+          font-size: 30px;
+          font-weight: 700;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+        }
+        .rewardGroup {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr;
+          .loginReward {
+            background: url(../images/rewards_cup.png) no-repeat right center,linear-gradient(#1E3932,#1E3932); 
+            border-radius: 15px 0 15px 15px;
+            color:#fff;
+            a {
+              width: 100%; height: 100%;
+              padding: 50px;
+              box-sizing: border-box;
+              display: block;  
+              .title {
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 1.3;
+                padding-top: 5px;
+              }
+              .titleSub {
+                font-size: 17px;
+                font-weight: 400;
+              }
+              .btn {
+                display: inline-block;
+                border: 1px solid #fff;
+                padding: 5px 40px;
+                border-radius: 5px;
+              }          
+            }
+          }
+          .signUpReward {
+            position: relative;
+            background: #FFE5A4;
+            box-sizing: border-box;
+            border-radius: 15px 0 15px 15px;
+            .rewardStar {
+              width: 250px;
+              position: absolute;
+              right: -90px; bottom: -10px;
+            }
+            a {
+              width: 100%; height: 100%;
+              display: block;
+              .photo {
+                display: none;
+              }
+              .text {
+                float: left;
+                padding: 50px;
+                box-sizing: border-box;
+                .title {
+                  font-size: 24px;
+                  font-weight: 700;
+                  line-height: 1.3;
+                  padding-top: 5px;
+                }
+                .titleSub {
+                  font-size: 17px;
+                  font-weight: 500;
+                }
+                .btn {
+                  display: inline-block;
+                  border: 1px solid #282828;
+                  padding: 5px 40px;
+                  border-radius: 5px;
+                }  
+              }
+            }
+          }
+          .mobileCardReward {
+            position: relative;
+            background:#CBE8E3; 
+            grid-column-start: 1;
+            grid-column-end: 3;
+            box-sizing: border-box;
+            padding: 50px;
+            border-radius: 15px;
+            a {
+              display: block;
+              width: 100%; height: 100%;
+              .text {
+                font-weight: 600;
+                font-size: 22px;
+                padding-right: 300px;
+              }
+              .btn {
+                display: inline-block;
+                border: 1px solid #282828;
+                padding: 5px 40px;
+                border-radius: 5px;
+                margin-top: 30px;
+              }
+              img {
+                width: 250px; right: 0; bottom: -50px;
+                position: absolute;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:890px){
+  .contentsWrap {
+    .banner {
+      height: 100%;
+      margin-top: 87px;
+      background: #fff0da;
+      text-align: center;
+      color: #fff;
+      padding: 270px 0 90px 0;
+      /* background-attachment: fixed; */
+      .container {
+        position: relative;
+        .drink {
+          display: none;
+        }
         .bannerMainTitle {
           position: absolute;
-          top: 15%; left: 20px;
+          top: -130px; left: 5%;
           transform: translateY(-50%);
           color: #006F4A;
           .mainTitle {
             img {
-              width: 330px;
+              width: 350px;
             }
           }
           .viewMore {
-            opacity: 0;
             margin-top: 20px;
             display: block;
             width: 140px;
@@ -777,41 +970,240 @@ body {
             }
           }
         }
-        .drink {
-          display: none;
-        }
         .notice {
-          font-size: 20px;
           width: 100%;
           right: 0;
-          bottom: 0;
+          bottom: -100px;
           position: absolute;
-          display: flex;
           .notice-left {
-            width: 50%;
-            padding: 15px 0;
-            border-radius: 0;
-            display: block;
+            width: 100%;
+            padding: 0; 
             background: #282828; 
-            img {display: none;}
+            border-radius: 0;
+            justify-content: center;
+            padding: 10px 0;
+            img {width: 0;}
           }
           .notice-right {
-            padding: 15px 0;
-            width: 50%;
-            display: block;
-            border-radius: 0;
+            justify-content: center;
+            width: 100%;
+            padding: 15px 0; 
             background: #06442f; 
-            img {display: none;}
+            border-radius: 0;
+            img {width: 0;}
+          }
+        }
+        .mobile {
+          margin: 0 auto;
+          display: block;
+          background: url(../images/drink_bg_pt.png) center/cover,linear-gradient(#006F4A,#006F4A);
+          width: 90%;
+          border-radius: 10px;
+          padding: 10%;
+          box-sizing: border-box;
+          section {
+            text-align: right;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 50px;
+            &:last-child {padding-bottom: 0;}
+            img {width: 30%;}
+            .text {
+              font-size: 4vw;
+              letter-spacing: -5%;
+              font-weight: 500;
+              line-height: 100%;
+              p {
+                span {
+                  font-size: 3vw;
+                  font-weight: 300;
+                }
+              }
+            }
+          }
+          .left {
+            text-align: left;
           }
         }
       }
     }
-    .products {
-      padding: 15px;
-      margin: 130px 0;
-    }
     .news {
-      display: none;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgb(0, 111, 74,.8),rgb(0, 111, 74,.8)), url(../images/new_bg_cafe.jpg) no-repeat center/cover;
+      background-attachment: fixed;
+      .container {
+        position: relative;
+        .title {
+          display: none;
+        }
+        .newsItem {display: none;}
+        .mobile {
+          display: block;
+          .mobileTitle {
+            padding: 30px 0;
+            text-align: center;
+            color: #fff;
+            font-size: 27px;
+            font-weight: 500;
+          }
+          .mobileNewsItem {
+            ul {
+              display: grid;
+              grid-template-columns: 1fr ;
+              grid-template-rows: 1fr 1fr 1fr 1fr;
+              
+              li {
+                a {
+                  display: block;
+                  img {
+                    display: block;
+                    width: 100%;
+                    height: 455px;
+                    object-fit: cover;
+                  }
+                  p {
+                    padding: 3vh 0;
+                    text-align: center;
+                    color: #fff;
+                    background: #006F4A;
+                    font-size: 20px;
+                    font-weight: 500;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
+  }
+}
+
+@media (max-width:949px){
+  .contentsWrap {
+    .rewards {
+      padding-top: 150px;
+      .container {
+        .rewardGroup {
+          display: flex;
+          flex-direction: column;
+          .loginReward {
+            background: url(../images/rewards_cup.png) no-repeat right center,linear-gradient(#1E3932,#1E3932); 
+            border-radius: 15px 0 15px 15px;
+            color:#fff;
+            a {
+              width: 100%; height: 100%;
+              padding: 30px;
+              box-sizing: border-box;
+              display: block;  
+              .title {
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 1.3;
+                padding-top: 5px;
+              }
+              .titleSub {
+                font-size: 15px;
+                font-weight: 400;
+              }
+              .btn {
+                display: inline-block;
+                border: 1px solid #fff;
+                padding: 5px 40px;
+                border-radius: 5px;
+              }          
+            }
+          }
+          .signUpReward {
+            position: relative;
+            background: #FFE5A4;
+            box-sizing: border-box;
+            border-radius: 15px 0 15px 15px;
+            .rewardStar {
+              width: 250px;
+              position: absolute;
+              right: -90px; bottom: -10px;
+            }
+            a {
+              width: 100%; height: 100%;
+              display: block;
+              .photo {
+                display: none;
+              }
+              .text {
+                float: left;
+                padding: 30px;
+                box-sizing: border-box;
+                .title {
+                  font-size: 20px;
+                  font-weight: 700;
+                  line-height: 1.3;
+                  padding-top: 5px;
+                }
+                .titleSub {
+                  font-size: 15px;
+                  font-weight: 500;
+                }
+                .btn {
+                  display: inline-block;
+                  border: 1px solid #282828;
+                  padding: 5px 40px;
+                  border-radius: 5px;
+                }  
+              }
+            }
+          }
+          .mobileCardReward {
+            padding: 30px;
+            a {
+              display: block;
+              width: 100%; height: 100%;
+              .text {
+                font-weight: 600;
+                font-size: 20px;
+                padding-right: 0;
+              }
+              img {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width:375px){
+  .contentsWrap {
+    .banner {
+      .container {
+        .bannerMainTitle {
+          position: absolute;
+          top: -130px; left: 5%;
+          transform: translateY(-50%);
+          color: #006F4A;
+          .mainTitle {
+            img {
+              width: 250px;
+            }
+          }
+        }
+      }
+    }
+    .rewards {
+      padding-top: 150px;
+      .container {
+        .rewardGroup {
+          display: flex;
+          flex-direction: column;
+          .loginReward {
+            background: url(../images/rewards_cup.png) no-repeat 250px center,linear-gradient(#1E3932,#1E3932); }
+          }
+        }
+      }
   }
 }
