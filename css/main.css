@@ -201,7 +201,7 @@ body {
         position: absolute;
         top: 50%; right: 0;
         transform: translateY(-50%);
-        width: 75%;
+        width: 78%;
       }
       .bannerMainTitle {
         position: absolute;
@@ -257,7 +257,7 @@ body {
 
   /* products */
   .products {
-    margin: 200px 0 170px 0;
+    margin: 170px 0 170px 0;
     .container {
       position: relative;
       height: 100%;
