@@ -9,7 +9,21 @@ $(document).ready(function(){
   // a태그 기본기능 제거
   $("a").click(function(e){
     e.preventDefault();
+    // e.preventDefault = false;
   })
+
+  // $("header .logo").click(function(e){
+  //   e.preventDefault = false;
+  // })
+
+  $('header .logo').click(function() {
+    location.reload();
+});
+
+  $(function(){
+    $("html, body").animate({ scrollTop: 0 }, "fast"); 
+});
+
 
   // swiper 슬라이더
 	var swiper = new Swiper(".mySwiper", {
@@ -52,6 +66,10 @@ $(document).ready(function(){
     },400)
     return false;
     });
+
+    $('header .logo').click(function() { 
+      location.reload();
+  });
 
 
     // 스크롤한 값에 따라 top버튼 활성화&비활성화

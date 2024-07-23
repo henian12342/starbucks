@@ -55,7 +55,7 @@ body {
   width: 100%;
   background: #fff;
   z-index: 50;
-  box-shadow: 0 5px 20px 0 rgba(170, 170, 170, 0.1);
+  box-shadow: 0 5px 20px 0 rgba(170, 170, 170, 0.3);
   .container {
     display: flex;
     justify-content: space-between;
@@ -76,6 +76,7 @@ body {
             padding: 45px 20px;
             position: relative;
             font-size: 15px;
+            font-weight: 600;
             &:hover::after {
               width: 100%;
             }
